@@ -71,8 +71,12 @@ def main(video):
     while(cap.isOpened()):
         frame_num += 1
 
-        if frame_num % 10 == 0:
-            print("{} / {} ({}%)".format(frame_num, frame_count, int(100 * float(frame_num) / frame_count)))
+        if frame_num % 10 == 1:
+            print("{} / {} ({}%) {}fps".format(
+                frame_num, 
+                frame_count, 
+                int(100 * float(frame_num) / frame_count), 
+                frame_num / (0.0001 + time.time() - start)))
 
         if frame_num % file_step == 1:
             if out:
