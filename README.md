@@ -7,39 +7,57 @@ CVPR 2018
 [Project Page](https://akanazawa.github.io/hmr/)
 
 ### Requirements
+- Windows 10
+- Anaconda
+- chocolatey
 - Python 3.5
-- [TensorFlow](https://www.tensorflow.org/) tested on version 1.8
+- CUDA 9.0 and cuDNN7.0
 
 ### Installation
 
-Install chocolatey:
+1. Install chocolatey:  
 https://chocolatey.org/install#installing-chocolatey
 
+2. Install CUDA 9.0  
+https://developer.nvidia.com/cuda-90-download-archive
+
+3. Set up cuDNN v7.0.5 (Dec 5, 2017), for CUDA 9.0   
+https://developer.nvidia.com/rdp/cudnn-archive
+
+4. Install Anaconda  
+https://www.anaconda.com/download/
+
+5. Open command line and setup hmr
 ```
-chocolatey wget
+chocolatey install wget
 
 # setup virtual environment
 conda create -n hmr3 pip python=3.5
 
 # install tensorflow
-pip install --ignore-installed --upgrade tensorflow-gpu 
-# Download and install CUDA 9.0 from this URL: https://developer.nvidia.com/cuda-toolkit
+pip install tensorflow-gpu==1.8
+# If without gpu:
+# pip install tensorflow==1.8
 
-# clone projects 
+# clone project
 git clone https://github.com/furaga/hmr.git
-cd hmr
 
 # install packages
+cd hmr
 pip install -r requirements
 
 # Download the pre-trained models
 wget https://people.eecs.berkeley.edu/~kanazawa/cachedir/hmr/models.tar.gz && tar -xf models.tar.gz
 
+# unzip pkl file converted for python3  
+unzip py3-models/py3-neutral_smpl_with_cocoplus_reg.zip -d models/
 ```
 
-Run the demo
+### Run the demo
 ```
 python -m demo --img_path data/coco1.png
-python -m demo --img_path data/im1954.jpg
 ```
 
+If succeeded, a window like the followng image will pop-up
+
+![HMR demo result](demo_result.png)
