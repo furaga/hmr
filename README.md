@@ -4,9 +4,7 @@ This project is forked from https://github.com/akanazawa/hmr
 
 Angjoo Kanazawa, Michael J. Black, David W. Jacobs, Jitendra Malik
 CVPR 2018
-
 [Project Page](https://akanazawa.github.io/hmr/)
-![Teaser Image](https://akanazawa.github.io/hmr/resources/images/teaser.png)
 
 ### Requirements
 - Python 3.5
