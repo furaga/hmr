@@ -72,7 +72,7 @@ def main(video):
         frame_num += 1
 
         if frame_num % 10 == 0:
-            print("{} / {} ({}%)\r".format(frame_num, frame_count, int(100 * float(frame_num) / frame_count)))
+            print("{} / {} ({}%)".format(frame_num, frame_count, int(100 * float(frame_num) / frame_count)))
 
         if frame_num % file_step == 1:
             if out:
@@ -88,7 +88,6 @@ def main(video):
             break
 
         img_raw_rgb = cv2.cvtColor(img_raw, cv2.COLOR_BGR2RGB)
-#                   
 
         bounding_boxes = [[0, 0, width, height]]
 
